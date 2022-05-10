@@ -6,4 +6,4 @@ run_dev:
 	ghcid --command "stack ghci simple-rest" --test "main"
 
 run_test:
-	
+

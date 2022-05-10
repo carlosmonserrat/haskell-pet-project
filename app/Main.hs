@@ -1,6 +1,6 @@
 module Main where
 
-import Lib
+import Routing
 
 main :: IO ()
 main = startApp

@@ -6,12 +6,12 @@ cabal-version: 1.12
 
 name:           simple-rest
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/simple-rest#readme>
+description:    Please see the README on GitHub at <https://github.com/carlosmonserrat/haskell-pet-project#readme>
 homepage:       https://github.com/githubuser/simple-rest#readme
 bug-reports:    https://github.com/githubuser/simple-rest/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2022 Author name here
+author:         Carlos Rojas
+maintainer:     soy_solamente@hotmail.com
+copyright:      2022 Carlos Rojas
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
@@ -24,7 +24,8 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Handlers
+      Routing
   other-modules:
       Paths_simple_rest
   hs-source-dirs:
