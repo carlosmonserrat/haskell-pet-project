@@ -1,0 +1,50 @@
+name: simple-rest
+version: 0.1.0.0
+github: "githubuser/simple-rest"
+license: BSD3
+author: "Carlos Rojas"
+maintainer: "soy_solamente@hotmail.com"
+copyright: "2022 Carlos Rojas"
+
+extra-source-files:
+  - README.md
+
+description: Please see the README on GitHub at <https://github.com/carlosmonserrat/haskell-pet-project#readme>
+
+dependencies:
+  - base >= 4.7 && < 5
+  - aeson
+  - servant-server
+  - wai
+  - warp
+
+library:
+  source-dirs: src
+
+executables:
+  simple-rest-exe:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - base
+      - simple-rest
+
+tests:
+  simple-rest-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - base
+      - simple-rest
+      - hspec
+      - hspec-wai
+      - hspec-wai-json
+      - aeson
