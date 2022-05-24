@@ -2,23 +2,27 @@
 {-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE TypeOperators #-}
 
-module Handlers (handleUsers, handlePing, User) where
+module Handlers (handleBook, handlePing, handleStoreBook, Book) where
 
 import Data.Aeson (defaultOptions)
 import Data.Aeson.TH (deriveJSON)
 import Servant (Handler)
 
-data User = User
+data Book = Book
   { userId :: Int,
-    userFirstName :: String,
-    userLastName :: String
+    bookName :: String,
+    bookAuthor :: String
   }
   deriving (Eq, Show)
 
-$(deriveJSON defaultOptions ''User)
+$(deriveJSON defaultOptions ''Book)
 
-handleUsers :: Handler [User]
-handleUsers = return [User 1 "Carlos" "Rojas", User 2 "Marina" "Alekseeva"]
+handleStoreBook :: Handler String
+handleStoreBook = return "stored"
+
+handleBook :: Int -> Handler Book
+handleBook bookId = return (Book bookId "The secrets of the sea" "Charles Dickens")
 
 handlePing :: Handler String
-handlePing = return "pong"
+handlePing = do
+  return "pong"

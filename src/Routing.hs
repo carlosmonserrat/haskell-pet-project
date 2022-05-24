@@ -11,22 +11,25 @@ import Servant
   ( Get,
     JSON,
     PlainText,
+    Post,
     Proxy (..),
     Server,
     serve,
+    Capture,
     (:<|>) (..),
     (:>),
   )
 
 type ROUTE =
-  "users" :> Get '[JSON] [User]
-    :<|> "ping" :> Get '[PlainText] String
+  "ping" :> Get '[PlainText] String
+    :<|> "book" :> Capture "id" Int :> Get '[JSON] Book
+    :<|> "book" :> Post '[JSON] String
 
 startApp :: IO ()
 startApp = run 8081 app
 
 app :: Application
 app = serve (Proxy :: Proxy ROUTE) server
-  
+
 server :: Server ROUTE
-server = handleUsers :<|> handlePing
+server = handlePing :<|> handleBook  :<|> handleStoreBook
