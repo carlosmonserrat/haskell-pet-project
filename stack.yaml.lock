@@ -11,6 +11,13 @@ packages:
       sha256: b494c2cab92667d33155794b752a84c62737548cf6232a6e7156e5cd7962aa1d
   original:
     hackage: hspec-wai-json-0.11.0
+- completed:
+    hackage: postgresql-simple-0.6.4@sha256:f6535e8f4f30a43a97ff8b7aa470b25cd55b1ed109d0605d7d702a7c0235eee8,5272
+    pantry-tree:
+      size: 4197
+      sha256: ffbbedf55de749903c6179978453c2b4e8c0ffa829f5cfcf032194bd1297045e
+  original:
+    hackage: postgresql-simple-0.6.4
 snapshots:
 - completed:
     size: 618876

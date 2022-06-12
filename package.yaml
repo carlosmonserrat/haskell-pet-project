@@ -32,6 +32,8 @@ executables:
     dependencies:
       - base
       - simple-rest
+      - postgresql-simple >= 0.6.4
+      - postgresql-libpq >= 0.9.4.3
 
 tests:
   simple-rest-test:

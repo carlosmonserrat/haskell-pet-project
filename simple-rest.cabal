@@ -48,6 +48,8 @@ executable simple-rest-exe
   build-depends:
       aeson
     , base
+    , postgresql-libpq >=0.9.4.3
+    , postgresql-simple >=0.6.4
     , servant-server
     , simple-rest
     , wai
